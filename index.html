@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FengJ 的物理笔记 - 包含广义相对论、泊松求和公式、线性响应理论等物理学习笔记，支持在线浏览和下载PDF。">
+    <meta name="keywords" content="物理笔记, 广义相对论, 泊松求和公式, 线性响应理论, 微分几何, 凝聚态物理, 数学物理方法, 格林函数, 爱因斯坦场方程">
+    <meta name="author" content="FengJ">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="FengJ 的物理笔记">
+    <meta property="og:description" content="包含广义相对论、泊松求和公式、线性响应理论等物理学习笔记，支持在线浏览和下载PDF。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fengjpc.github.io/physics-notes">
+    <meta property="og:locale" content="zh_CN">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="FengJ 的物理笔记">
+    <meta name="twitter:description" content="包含广义相对论、泊松求和公式、线性响应理论等物理学习笔记。">
+    <link rel="canonical" href="https://fengjpc.github.io/physics-notes">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "FengJ 的物理笔记",
+        "description": "包含广义相对论、泊松求和公式、线性响应理论等物理学习笔记，支持在线浏览和下载PDF。",
+        "url": "https://fengjpc.github.io/physics-notes",
+        "author": {
+            "@type": "Person",
+            "name": "FengJ"
+        },
+        "about": [
+            {
+                "@type": "Thing",
+                "name": "广义相对论",
+                "description": "爱因斯坦场方程与时空几何"
+            },
+            {
+                "@type": "Thing", 
+                "name": "泊松求和公式",
+                "description": "调和分析与数论应用"
+            },
+            {
+                "@type": "Thing",
+                "name": "线性响应理论", 
+                "description": "涨落耗散定理与格林函数"
+            }
+        ]
+    }
+    </script>
+    <title>FengJ 的物理笔记</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- 侧边栏 -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>FengJ<span class="accent">的物理笔记</span></h1>
+                <p class="subtitle">Physics Notes</p>
+            </div>
+            <nav class="nav">
+                <div class="nav-header">目录</div>
+                
+                <!-- 微分几何与广义相对论 -->
+                <div class="category">
+                    <div class="category-header" onclick="toggleCategory(this)">
+                        <span class="toggle-icon">▼</span>
+                        <span class="category-name">微分几何与广义相对论</span>
+                    </div>
+                    <ul class="note-list expanded">
+                        <li class="note-item active" data-pdf="pdfs/广义相对论.pdf" data-title="广义相对论">
+                            <span class="note-icon">📐</span>
+                            <div class="note-info">
+                                <span class="note-title">广义相对论</span>
+                                <span class="note-desc">爱因斯坦场方程与时空几何</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 数学物理方法 -->
+                <div class="category">
+                    <div class="category-header" onclick="toggleCategory(this)">
+                        <span class="toggle-icon">▼</span>
+                        <span class="category-name">数学物理方法</span>
+                    </div>
+                    <ul class="note-list expanded">
+                        <li class="note-item" data-pdf="pdfs/泊松求和公式笔记.pdf" data-title="泊松求和公式">
+                            <span class="note-icon">∑</span>
+                            <div class="note-info">
+                                <span class="note-title">泊松求和公式</span>
+                                <span class="note-desc">调和分析与数论应用</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 凝聚态理论 -->
+                <div class="category">
+                    <div class="category-header" onclick="toggleCategory(this)">
+                        <span class="toggle-icon">▼</span>
+                        <span class="category-name">凝聚态理论</span>
+                    </div>
+                    <ul class="note-list expanded">
+                        <li class="note-item" data-pdf="pdfs/线性响应理论笔记.pdf" data-title="线性响应理论">
+                            <span class="note-icon">📊</span>
+                            <div class="note-info">
+                                <span class="note-title">线性响应理论</span>
+                                <span class="note-desc">涨落耗散定理与格林函数</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </nav>
+            <div class="footer">
+                <p>用 ❤️ 整理的学习笔记</p>
+            </div>
+        </aside>
+
+        <!-- 主内容区 -->
+        <main class="main" id="main-area">
+            <header class="header">
+                <h2 id="current-title">广义相对论</h2>
+                <div class="header-actions">
+                    <button id="fullscreen-btn" class="btn-icon" title="全屏浏览">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+                        </svg>
+                        <span class="btn-text">全屏</span>
+                    </button>
+                    <a id="download-btn" href="pdfs/广义相对论.pdf" download class="btn-download">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        下载 PDF
+                    </a>
+                </div>
+            </header>
+
+            <div class="viewer">
+                <iframe id="pdf-viewer" src="pdfs/广义相对论.pdf" type="application/pdf"></iframe>
+                <div id="pdf-fallback" class="pdf-fallback hidden">
+                    <p>您的浏览器无法直接预览 PDF</p>
+                    <a id="fallback-link" href="pdfs/广义相对论.pdf" target="_blank" class="btn-primary">在新窗口打开</a>
+                </div>
+            </div>
+
+            <!-- SEO 内容摘要（对搜索引擎可见，用户不显示） -->
+            <div class="seo-content" aria-hidden="true">
+                <h3>笔记内容索引</h3>
+                <article>
+                    <h4>广义相对论</h4>
+                    <p>爱因斯坦场方程，时空几何，黎曼几何，曲率张量，测地线方程，引力透镜效应，黑洞，时空弯曲，广义协变性，等效原理，史瓦西解，克尔解，引力波，宇宙学，弗里德曼方程，大爆炸理论，暗能量。</p>
+                </article>
+                <article>
+                    <h4>泊松求和公式</h4>
+                    <p>调和分析，数论应用，傅里叶变换，theta函数，模形式，格点求和，热核，迹公式，自守形式，解析数论，素数定理，黎曼ζ函数。</p>
+                </article>
+                <article>
+                    <h4>线性响应理论</h4>
+                    <p>涨落耗散定理，格林函数，关联函数，久保公式，输运系数，电导率，磁化率，热力学极限，量子多体物理，费曼图，虚时格林函数，谱函数，Kramers-Kronig关系。</p>
+                </article>
+            </div>
+            <section class="comments" id="comments-section">
+                <div class="comments-toggle" onclick="toggleComments()">
+                    <span>💬 留言板</span>
+                    <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                </div>
+                <div class="comments-content" id="comments-content">
+                    <p class="comments-hint">所有笔记共享同一个留言板，欢迎交流讨论！</p>
+                    <div class="giscus-wrapper">
+                        <!-- 
+                        Giscus 配置说明：
+                        1. 访问 https://giscus.app/zh-CN
+                        2. 选择你的 GitHub 仓库
+                        3. 开启仓库的 Discussions 功能
+                        4. 把下面 data-repo 和 data-repo-id 替换成你的
+                        5. 所有笔记共享同一个留言板，因为 data-mapping="pathname" 会统一用固定路径
+                        -->
+                        <script src="https://giscus.app/client.js"
+                            data-repo="FengJPC/physics-notes"
+                            data-repo-id=""
+                            data-category="General"
+                            data-category-id=""
+                            data-mapping="pathname"
+                            data-term="general-discussion"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="bottom"
+                            data-theme="light"
+                            data-lang="zh-CN"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- 退出全屏按钮（全屏模式下显示） -->
+    <button id="exit-fullscreen" class="exit-fullscreen hidden" title="退出全屏">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"/>
+        </svg>
+        <span>退出全屏</span>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
